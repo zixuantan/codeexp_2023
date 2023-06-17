@@ -10,7 +10,7 @@ const VolunReg4 = ({ navigation }) => {
 
       <Button
           title="Finish"
-          onPress={() => navigation.navigate('StartPage')} // Go back to Volunteering 1
+          onPress={() => navigation.navigate('Volunteering1')} // Go back to Volunteering 1
         />
       
         
