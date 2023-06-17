@@ -5,9 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import LaunchPage from './components/LaunchPage';
 import StartPage from './components/StartPage';
-import Registration1 from './components/Registration1';
-import Registration2 from './components/Registration2';
-import Registration3 from './components/Registration3';
+import Registration1 from './components/Registration/Registration1';
+import Registration2 from './components/Registration/Registration2';
+import Registration3 from './components/Registration/Registration3';
 import Sports1 from './components/Sports/Sports1';
 import Sports2 from './components/Sports/Sports2';
 import Sports3 from './components/Sports/Sports3';
@@ -18,7 +18,15 @@ import Food2 from './components/Food/Food2';
 import Food3 from './components/Food/Food3';
 import Food4 from './components/Food/Food4';
 import Food5 from './components/Food/Food5';
-import Volunteering1 from './components/Volunteering1';
+import Volunteering1 from './components/Volunteering/Volunteering1';
+import Volunteering2 from './components/Volunteering/Volunteering2';
+import Volunteering3 from './components/Volunteering/Volunteering3';
+import Volunteering4 from './components/Volunteering/Volunteering4';
+import VolunReg1 from './components/VolunReg/VolunReg1';
+import VolunReg2 from './components/VolunReg/VolunReg2';
+import VolunReg3 from './components/VolunReg/VolunReg3';
+import VolunReg4 from './components/VolunReg/VolunReg4';
+
 
 const Stack = createStackNavigator();
 
@@ -41,9 +49,21 @@ export default function App (){
         <Stack.Screen name="Food3" options={{headerShown: false}} component={Food3} />
         <Stack.Screen name="Food4" options={{headerShown: false}} component={Food4} />
         <Stack.Screen name="Food5" options={{headerShown: false}} component={Food5} />
-
-
         <Stack.Screen name="Volunteering1" options={{headerShown: false}} component={Volunteering1} />
+        <Stack.Screen name="Volunteering2" options={{headerShown: false}} component={Volunteering2} />
+        <Stack.Screen name="Volunteering3" options={{headerShown: false}} component={Volunteering3} />
+        <Stack.Screen name="Volunteering4" options={{headerShown: false}} component={Volunteering4} />
+        <Stack.Screen name="VolunReg1" options={{headerShown: false}} component={VolunReg1} />
+        <Stack.Screen name="VolunReg2" options={{headerShown: false}} component={VolunReg2} />
+        <Stack.Screen name="VolunReg3" options={{headerShown: false}} component={VolunReg3} />
+        <Stack.Screen name="VolunReg4" options={{headerShown: false}} component={VolunReg4} />
+
+
+
+
+
+
+
 
 
 
