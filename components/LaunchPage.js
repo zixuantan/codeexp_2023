@@ -5,9 +5,28 @@ import { useState } from 'react';
 const LaunchPage = ({ navigation }) => {
 
   const [username, setUsername] = useState(''); 
-  //useState function returns an array comprising a state variable called username and a function called setusername
-  // that allows you to set the username  
+
+  // const [stateValue, setStateValue] = useState(initialValue);
+  // stateValue is current value of state, setStateValue is function used to update state value
+  // initialValue is initial value assigned to state when component is first rendered 
+  // when updating the state, calling setStateValue function will pass in the new value 
+
   const [password, setPassword] = useState('');
+
+  const [errorMessage, setErrorMessage] = useState('');
+
+  function handleLogin(){
+    if (username === 'admin' && password === 'password') {
+      setErrorMessage('');
+      setUsername('');
+      setPassword('');
+      navigation.navigate('StartPage');
+    } else {
+      setErrorMessage('Incorrect username or password')
+    }
+  };
+
+  // function takes a text input and replaces the intial state value with that text input 
 
   function handleUsernameChange(text){
     setUsername(text);
@@ -20,25 +39,42 @@ const LaunchPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>Open Jio</Text>
-      
-      <View styles={styles.inputContainer}>
-      <TextInput 
-      value={username} style={styles.textInput} onChangeText={handleUsernameChange} ></TextInput>
+
+      <View style={styles.inputContainer}>
+
+
+        <TextInput 
+        value={username} 
+        style={styles.textInput} 
+        onChangeText={handleUsernameChange} 
+        placeholder="Phone number" >
+        </TextInput>
+
+        <TextInput 
+        value={password} 
+        style={styles.textInput} 
+        onChangeText={handlePasswordChange} 
+        placeholder="Password">
+        </TextInput>
+        
       </View>
 
-      <View styles={styles.inputContainer}>
-      <TextInput value={password} style={styles.textInput} onChangeText={handlePasswordChange}  ></TextInput>
-      </View>
+      {/* Login Button */}
 
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+      <Text> Login </Text> 
+      </TouchableOpacity>
 
-      <Button
-        title="Login"
-        onPress={() => navigation.navigate('StartPage')} // Login Button
-      />
-      <Button
-        title="Register new user"
-        onPress={() => navigation.navigate('Registration1')} // Register new user Button
-      />
+    
+
+      {/* Register Button */}
+
+      <TouchableOpacity style={styles.registerButton} onPress={() => navigation.navigate('Registration1')}>
+        <Text style={styles.registerText}> Register new user </Text> 
+      </TouchableOpacity>
+
+      {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
+
     </View>
   );
 };
@@ -57,26 +93,42 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   inputContainer:{ // Container surrounding both input boxes
-    width: 200,
-    borderColor: '#75C6EE',
-    borderWidth: 2,
-    marginTop: 12,
-    
+    marginTop: 150,
+    marginBottom: 30  
   },
   textInput:{ // Imagine each input box being a container
     backgroundColor: 'white',
     paddingHorizontal: 10,
-    paddingVertical: 10,
+    paddingVertical: 15,
     borderRadius: 10,
-    width: 250,
-    marginBottom: 10,
-
-
-    
-
-   
-
+    width: 270,
+    marginBottom: 20,
   },
+  loginButton:{
+    backgroundColor: '#dea3e6',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    width: 250,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  
+  registerButton:{
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop: 15,
+  },
+
+  registerText:{
+    textDecorationLine: 'underline',
+  },
+
+  error: {
+    color: 'red',
+    marginBottom: 10,
+  },
+ 
 });
 
 export default LaunchPage;
