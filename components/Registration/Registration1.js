@@ -3,6 +3,8 @@ import { View, Text, Button, StyleSheet, TouchableOpacity, TextInput } from 'rea
 import { Ionicons } from '@expo/vector-icons'; 
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useState } from 'react';
+import { auth } from '../../firebase';
+import { Firestore } from 'firebase/firestore';
 
 
 
@@ -32,6 +34,24 @@ const Registration1 = ({ navigation }) => {
 
   function handlePassword_reg(text){
     setPassword_reg(text)
+  };
+
+  const handleRegister = () => {
+    auth.createUserWithEmailAndPassword(email_reg, password_reg)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log('Registered user:', user.email_reg);
+      })
+      .catch((error) => {
+        console.log('Registration error:', error);
+      });
+  };
+
+
+
+  function handleNavigation(){
+    handleRegister();
+    navigation.navigate('Registration2');
   };
 
   return (
@@ -99,7 +119,7 @@ const Registration1 = ({ navigation }) => {
         paddingHorizontal: 20,
         width: 310,
         borderRadius: 5,
-        alignItems: 'center',}} onPress={() => navigation.navigate('Registration2')} >
+        alignItems: 'center',}} onPress={handleNavigation} >
         <Text> Next </Text> 
       </TouchableOpacity>
 

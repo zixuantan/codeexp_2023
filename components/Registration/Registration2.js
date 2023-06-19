@@ -3,6 +3,8 @@ import { View, Text, Button, StyleSheet, TouchableOpacity, TextInput } from 'rea
 import {Picker} from '@react-native-picker/picker'
 import { Ionicons } from '@expo/vector-icons'; 
 import { useState } from 'react';
+import { auth } from '../../firebase';
+import { db } from '../../firebase';
 
 const Registration2 = ({ navigation }) => {
 
@@ -22,6 +24,18 @@ const Registration2 = ({ navigation }) => {
   function handleNeighbourhood(value){
     setSelectedNeighbourhood(value)
   };
+
+  // const handleNeighborhoodSelection = () => {
+  //   // Store selected neighborhood in Firebase
+  //   const currentUser = auth.currentUser;
+  //   firebase()
+  //     .collection('users')
+  //     .doc(currentUser.uid)
+  //     .set({ neighborhood: selectedNeighborhood })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <View>

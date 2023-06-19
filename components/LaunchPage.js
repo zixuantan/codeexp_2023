@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
+import { auth } from '../firebase';
 
 const LaunchPage = ({ navigation }) => {
 
@@ -15,15 +16,31 @@ const LaunchPage = ({ navigation }) => {
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  function handleLogin(){
-    if (username === 'admin' && password === 'password') {
-      setErrorMessage('');
-      setUsername('');
-      setPassword('');
-      navigation.navigate('StartPage');
-    } else {
-      setErrorMessage('Incorrect username or password')
-    }
+  // function handleLogin(){
+  //   if (username === 'admin' && password === 'password') {
+  //     setErrorMessage('');
+  //     setUsername('');
+  //     setPassword('');
+  //     navigation.navigate('StartPage');
+  //   } else {
+  //     setErrorMessage('Incorrect username or password')
+  //   }
+  // };
+
+  const handleLogin = () => {
+    auth.signInWithEmailAndPassword(username, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log('logged in with', {username});
+        setErrorMessage(null) //resetting error message
+        setUsername(''); // clearing username field
+        setPassword(''); // clearing password field
+        navigation.navigate("StartPage");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setErrorMessage('Incorrect username or password')
+      });
   };
 
   // function takes a text input and replaces the intial state value with that text input 
@@ -127,6 +144,7 @@ const styles = StyleSheet.create({
   error: {
     color: 'red',
     marginBottom: 10,
+    marginTop: 20
   },
  
 });
