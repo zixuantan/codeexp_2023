@@ -22,27 +22,27 @@ const VolunReg1 = ({ navigation }) => {
 
 
   function handleProjectName_projreg(text){
-    projectName_projreg(text)
+    setProjectName_projreg(text)
   };
 
   function handleContactPerson_projreg(text){
-    contactPerson_projreg(text)
+    setContactPerson_projreg(text)
   };
 
   function handleContactNum_projreg(text){
-    contactNum_projreg(text)
+    setContactNum_projreg(text)
   };
 
   function handleProjectDescription_projreg(text){
-    projectDescription_projreg(text)
+    setProjectDescription_projreg(text)
   };
 
   function handleUpcomingActivities_projreg(text){
-    upcomingActivities_projreg(text)
+    setUpcomingActivities_projreg(text)
   };
 
   function handleMeetingPoint_projreg(text){
-    meetingPoint_projreg(text)
+    setMeetingPoint_projreg(text)
   };
 
   function handleSelectedCommitmentLevel_projreg(value){
@@ -101,7 +101,7 @@ const VolunReg1 = ({ navigation }) => {
           placeholder="Contact number" >
           </TextInput>
 
-          <Text style={{marginBottom:19, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Pick the category your project falls under</Text>
+          <Text style={{marginBottom:19, fontFamily: 'Helvetica', fontSize: 16, fontWeight: 200}}>Pick the category your project falls under</Text>
 
           <Picker
             style={{marginTop: -15,}}
@@ -115,14 +115,18 @@ const VolunReg1 = ({ navigation }) => {
 
           <TextInput 
           value={projectDescription_projreg} 
-          style={styles.textInput} 
+          style={styles.textInput_Long} 
+          multiline
+          numberOfLines={5}
           onChangeText={handleProjectDescription_projreg} 
           placeholder="Project Description" >
           </TextInput>
 
           <TextInput 
           value={upcomingActivities_projreg} 
-          style={styles.textInput} 
+          style={styles.textInput_Long} 
+          multiline
+          numberOfLines={5}
           onChangeText={handleUpcomingActivities_projreg} 
           placeholder="Upcoming Activites" >
           </TextInput>
@@ -134,16 +138,26 @@ const VolunReg1 = ({ navigation }) => {
           placeholder="Meeting point" >
           </TextInput>
 
-          <Text style={{marginBottom:19, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Pick the level of commitment required</Text>
+          <Text style={{marginBottom:19, fontFamily: 'Helvetica', fontSize: 16, fontWeight: 200}}>Pick the level of commitment required</Text>
 
           <Picker
-            style={{marginTop: -15,}}
+            style={{marginTop: -15, marginBottom: 30}}
             selectedValue={selectedCommitmentLevel_projreg}
             onValueChange={handleSelectedCommitmentLevel_projreg}>
             <Picker.Item label="< 6 days" value="1" />
             <Picker.Item label="> 1 week" value="2" />
             <Picker.Item label="> 1 month" value="3" />
           </Picker>
+
+          <TouchableOpacity style={{
+            backgroundColor: '#dea3e6',
+            paddingVertical: 20,
+            paddingHorizontal: 20,
+            width: 310,
+            borderRadius: 5,
+            alignItems: 'center'}} onPress={() => navigation.navigate('VolunReg3')} >
+            <Text> Submit </Text> 
+          </TouchableOpacity>
 
 
         </View>
@@ -189,6 +203,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 310,
     marginBottom: 60,
+  },
+
+  textInput_Long:{ // Imagine each input box being a container
+    backgroundColor: 'white',
+    paddingHorizontal: 10,
+    paddingVertical: 190,
+    borderRadius: 10,
+    width: 310,
+    marginBottom: 60,
+    textAlignVertical: 'top'
   },
 
 

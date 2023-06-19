@@ -25,7 +25,6 @@ import Volunteering4 from './components/Volunteering/Volunteering4';
 import VolunReg1 from './components/VolunReg/VolunReg1';
 import VolunReg2 from './components/VolunReg/VolunReg2';
 import VolunReg3 from './components/VolunReg/VolunReg3';
-import VolunReg4 from './components/VolunReg/VolunReg4';
 
 
 const Stack = createStackNavigator();
@@ -56,7 +55,6 @@ export default function App (){
         <Stack.Screen name="VolunReg1" options={{headerShown: false}} component={VolunReg1} />
         <Stack.Screen name="VolunReg2" options={{headerShown: false}} component={VolunReg2} />
         <Stack.Screen name="VolunReg3" options={{headerShown: false}} component={VolunReg3} />
-        <Stack.Screen name="VolunReg4" options={{headerShown: false}} component={VolunReg4} />
 
 
 
