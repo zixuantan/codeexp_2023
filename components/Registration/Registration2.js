@@ -3,42 +3,22 @@ import { View, Text, Button, StyleSheet, TouchableOpacity, TextInput } from 'rea
 import {Picker} from '@react-native-picker/picker'
 import { Ionicons } from '@expo/vector-icons'; 
 import { useState } from 'react';
-import { auth } from '../../firebase';
-import { db } from '../../firebase';
 
-const Registration2 = ({ navigation }) => {
+const Registration2 = ({ route, navigation }) => {
 
   function handleGoBack(){
     navigation.goBack();
   };
 
-  const [name, setName] = useState('')
-  const [selectedNeighbourhood, setSelectedNeighbourhood] = useState('1')
 
-  // Store name input in name 
-  function handleName(text){
-    setName(text)
+  function handleNextPage(){
+    navigation.navigate('LaunchPage');
   };
 
-  // Store neighbourhood choice in selectedNeighbourhood
-  function handleNeighbourhood(value){
-    setSelectedNeighbourhood(value)
-  };
-
-  // const handleNeighborhoodSelection = () => {
-  //   // Store selected neighborhood in Firebase
-  //   const currentUser = auth.currentUser;
-  //   firebase()
-  //     .collection('users')
-  //     .doc(currentUser.uid)
-  //     .set({ neighborhood: selectedNeighborhood })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
 
   return (
     <View>
+
 
       <View style={{flexDirection: 'row',marginTop: 70,}}> 
         <TouchableOpacity onPress={handleGoBack}>
@@ -54,45 +34,25 @@ const Registration2 = ({ navigation }) => {
           fontFamily: 'Trebuchet MS',
           fontSize: 30,
           fontWeight: 'normal',
-          marginLeft: -5,}}>
-            Tell us about yourself</Text>
+          marginLeft: 25,}}>
+            Let's get started</Text>
       </View>
 
       <View style={styles.container}>
 
-        <Text style={styles.description}>We're going to need some of your information.</Text>
+        <Text style={styles.description1}>These are the activities we help to platform.</Text>
+        <Text style={styles.description2}>Jio someone today!</Text>
+      
+      </View>
 
+        
+      <View style={styles.activityContainer}>
 
-        <View style={styles.inputContainer}>
+        <Text style={styles.activity}>Sports & Games</Text>
 
-          {/* Name */}
+        <Text style={styles.activity}>Food Buddies</Text>
 
-          <Text style={{marginBottom:19, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>What's your name? </Text>
-
-          <TextInput 
-          value={name} 
-          style={styles.textInput} 
-          onChangeText={handleName} 
-          placeholder="Name" >
-          </TextInput>
-
-          {/* Neighbourhood */}
-
-          <Text style={{marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Enter your neighbourhood </Text>
-          <Text style={{marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>(we'll use this to group you with others </Text>
-          <Text style={{marginBottom:-5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}> in your community) </Text>
-
-          <Picker
-            style={{marginTop: -15,}}
-            selectedValue={selectedNeighbourhood}
-            onValueChange={handleNeighbourhood}>
-            <Picker.Item label="Admiralty" value="1" />
-            <Picker.Item label="Aljunied" value="2" />
-            <Picker.Item label="Ang Mo Kio" value="3" />
-            <Picker.Item label="Bukit Batok" value="4" />
-          </Picker>
-
-        </View>
+        <Text style={styles.activity}>Volunteering</Text>
 
         <TouchableOpacity style={{
         backgroundColor: '#dea3e6',
@@ -100,12 +60,12 @@ const Registration2 = ({ navigation }) => {
         paddingHorizontal: 20,
         width: 310,
         borderRadius: 5,
-        alignItems: 'center'}} onPress={() => navigation.navigate('Registration3')} >
-        <Text> Next </Text> 
+        alignItems: 'center'}} onPress={handleNextPage} >
+        <Text> Finish </Text> 
       </TouchableOpacity>
 
       </View>
-
+      
     </View>
   );
 };
@@ -116,29 +76,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  description:{
+  description1:{
     fontFamily: 'Helvetica',
     marginTop:30,
     fontSize: 15,
     fontWeight: 200,
   },
-
-  inputContainer:{ // Container surrounding all 3 input boxes
-    marginTop: 100,
-    marginBottom: 30  
+  description2:{
+    fontFamily: 'Helvetica',
+    marginTop:10,
+    fontSize: 15,
+    fontWeight: 200,
   },
-
-  textInput:{ // Imagine each input box being a container
+  activityContainer:{ //Container surrounding all 3 activity boxes
+    marginTop: 80,
+    marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  activity:{
     backgroundColor: 'white',
     paddingHorizontal: 10,
-    paddingVertical: 20,
+    paddingVertical: 25,
     borderRadius: 10,
     width: 310,
-    marginBottom: 35,
+    marginBottom: 60,
+    textAlign: 'center',
+    fontSize: 20,
+    fontFamily: 'Helvetica',
+    fontWeight: 200,
   },
 
   
+
+
 });
 
-export default Registration2
-
+export default Registration2;

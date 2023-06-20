@@ -7,7 +7,7 @@ import { Touchable } from 'react-native';
 
 const Sports3 = ({ route, navigation }) => {
 
-  const { selectedDay } = route.params;
+  const { selectedDay, selectedSport, selectedProficiency } = route.params;
   
   const [selectedTiming, setSelectedTiming] = useState('7AM');
 
@@ -16,7 +16,7 @@ const Sports3 = ({ route, navigation }) => {
   };
 
   function handleNextPage(){
-    navigation.navigate('Sports4', {selectedTiming, selectedDay});
+    navigation.navigate('Sports4', {selectedTiming, selectedDay, selectedSport, selectedProficiency});
   };
 
 

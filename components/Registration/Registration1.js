@@ -4,8 +4,10 @@ import { Ionicons } from '@expo/vector-icons';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useState } from 'react';
 import { auth } from '../../firebase';
-import { Firestore } from 'firebase/firestore';
-
+import { ScrollView } from 'react-native-gesture-handler';
+import {Picker} from '@react-native-picker/picker'
+import { db } from '../../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 
 const Registration1 = ({ navigation }) => {
@@ -14,14 +16,16 @@ const Registration1 = ({ navigation }) => {
     navigation.goBack();
   };
 
-  const [phonenum_reg, setPhonenum_reg] = useState('');
+  const [name_reg, setName_reg] = useState('');
   const [email_reg, setEmail_reg] = useState('');
   const [password_reg, setPassword_reg] = useState('');
+  const [selectedNeighbourhood, setSelectedNeighbourhood] = useState('Admiralty');
 
-  // Store registered phone num in phonenum_reg
 
-  function handlePhonenum_reg(text){
-    setPhonenum_reg(text)
+  // Store registered name in name_reg
+
+  function handleName_reg(text){
+    setName_reg(text)
   };
 
   // Store registered email in email_reg
@@ -48,14 +52,30 @@ const Registration1 = ({ navigation }) => {
   };
 
 
+  const handleUpload = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        email_reg,
+        selectedNeighbourhood,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+
+  function handleNeighbourhood(value){
+    setSelectedNeighbourhood(value)
+  };
 
   function handleNavigation(){
+    handleUpload();
     handleRegister();
     navigation.navigate('Registration2');
   };
 
   return (
-    <View> 
+    <ScrollView> 
 
       {/* Top container is used for aligning back button and header */}
 
@@ -84,13 +104,13 @@ const Registration1 = ({ navigation }) => {
 
         <View style={styles.inputContainer}>
 
-          {/* Phone Number */}
+          {/* name */}
 
           <TextInput 
-          value={phonenum_reg} 
+          value={name_reg} 
           style={styles.textInput} 
-          onChangeText={handlePhonenum_reg} 
-          placeholder="Phone number" >
+          onChangeText={handleName_reg} 
+          placeholder="Name" >
           </TextInput>
 
           {/* Email */}
@@ -110,6 +130,22 @@ const Registration1 = ({ navigation }) => {
           onChangeText={handlePassword_reg} 
           placeholder="Password">
           </TextInput>
+
+          {/* Neighbourhood */}
+
+          <Text style={{marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Enter your neighbourhood </Text>
+          <Text style={{marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>(we'll use this to group you with others </Text>
+          <Text style={{marginBottom:-5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}> in your community) </Text>
+
+          <Picker
+            style={{marginTop: -15,}}
+            selectedValue={selectedNeighbourhood}
+            onValueChange={handleNeighbourhood}>
+            <Picker.Item label="Admiralty" value="Admiralty" />
+            <Picker.Item label="Aljunied" value="Aljunied" />
+            <Picker.Item label="Ang Mo Kio" value="Ang Mo Kio" />
+            <Picker.Item label="Bukit Batok" value="Bukit Batok" />
+          </Picker>
           
         </View>
 
@@ -118,6 +154,8 @@ const Registration1 = ({ navigation }) => {
         paddingVertical: 20,
         paddingHorizontal: 20,
         width: 310,
+        marginTop: 20,
+        marginBottom: 80,
         borderRadius: 5,
         alignItems: 'center',}} onPress={handleNavigation} >
         <Text> Next </Text> 
@@ -126,7 +164,7 @@ const Registration1 = ({ navigation }) => {
       </View>
 
 
-    </View>
+    </ScrollView>
   );
 };
 
@@ -149,7 +187,7 @@ const styles = StyleSheet.create({
   },
 
   inputContainer:{ // Container surrounding all 3 input boxes
-    marginTop: 100,
+    marginTop: 90,
     marginBottom: 30  
   },
 

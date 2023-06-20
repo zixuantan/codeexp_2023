@@ -7,7 +7,7 @@ import { Touchable } from 'react-native';
 
 const Sports2 = ({ route, navigation }) => {
 
-  const {selectedSport} = route.params;
+  const {selectedSport, selectedProficiency} = route.params;
   const [selectedDay, setSelectedDay] = useState('');
 
   function handleGoBack(){
@@ -15,7 +15,7 @@ const Sports2 = ({ route, navigation }) => {
   };
 
   function handleDayClick(day){
-    navigation.navigate('Sports3', {selectedDay:day});
+    navigation.navigate('Sports3', {selectedDay:day, selectedSport, selectedProficiency});
 
   };
 

@@ -7,16 +7,19 @@ import { Touchable } from 'react-native';
 
 const Sports4 = ({ route, navigation }) => {
 
-  const {selectedTiming, selectedDay} = route.params;
+  const {selectedTiming, selectedDay, selectedSport, selectedProficiency} = route.params;
 
   function handleGoBack(){
     navigation.goBack();
   };
 
+  function handleNextPage(){
+    navigation.navigate('SportsFeedUpdated', {selectedTiming, selectedDay, selectedSport, selectedProficiency});
+  };
 
 
   return (
-    <View>
+    <ScrollView>
 
       <View style={{flexDirection: 'row',marginTop: 70, textAlign: 'center'
       }}> 
@@ -41,28 +44,35 @@ const Sports4 = ({ route, navigation }) => {
       <View style={styles.container}>
 
         <View style={styles.detailsContainer}>
+        <Text style={styles.details}>
+            {selectedSport} ({selectedProficiency})
+            
+
+          </Text>
           <Text style={styles.details}> Date: {selectedDay}  </Text>
           <Text style={styles.details}> Time: {selectedTiming} </Text>
           <Text style={styles.details}> Current no. of participants: 2/4</Text>
+          
         </View>
 
         {/* Go to Sports 5 */}
 
         <TouchableOpacity style={{
         backgroundColor: '#dea3e6',
-        marginTop: 30,
+        // marginTop: 30,
+        marginBottom: 30,
         paddingVertical: 20,
         paddingHorizontal: 20,
         width: 310,
         borderRadius: 5,
-        alignItems: 'center'}} onPress={() => navigation.navigate('Sports5')} >
+        alignItems: 'center'}} onPress={handleNextPage} >
         <Text> Join </Text> 
       </TouchableOpacity>
 
       </View>
         
       
-    </View>
+    </ScrollView>
   );
 };
 

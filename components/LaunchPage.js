@@ -2,10 +2,22 @@ import React from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { auth } from '../firebase';
+import {Picker} from '@react-native-picker/picker'
+import { Ionicons } from '@expo/vector-icons'; 
+import { useUsernameState } from './usernameState';
+import { UsernameContext } from './UsernameContext';
+import { useContext } from 'react';
+import { createContext } from 'react';
 
-const LaunchPage = ({ navigation }) => {
+const LaunchPage = ({ route, navigation }) => {
 
-  const [username, setUsername] = useState(''); 
+
+  // const [username, setUsername] = useState(''); 
+
+  // const [username, setUsername] = useUsernameState(''); 
+
+  const { username, setUsername } = useContext(UsernameContext);
+  
 
   // const [stateValue, setStateValue] = useState(initialValue);
   // stateValue is current value of state, setStateValue is function used to update state value
@@ -16,32 +28,26 @@ const LaunchPage = ({ navigation }) => {
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  // function handleLogin(){
-  //   if (username === 'admin' && password === 'password') {
-  //     setErrorMessage('');
-  //     setUsername('');
-  //     setPassword('');
-  //     navigation.navigate('StartPage');
-  //   } else {
-  //     setErrorMessage('Incorrect username or password')
-  //   }
-  // };
+ 
 
   const handleLogin = () => {
     auth.signInWithEmailAndPassword(username, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log('logged in with', {username});
-        setErrorMessage(null) //resetting error message
-        setUsername(''); // clearing username field
-        setPassword(''); // clearing password field
-        navigation.navigate("StartPage");
+        console.log('logged in with', { username });
+        setErrorMessage(null); // Resetting error message
+        setUsername(username); //  username field
+        setPassword(''); // Clearing password field
+        navigation.navigate("StartPage", { username }); 
+        // Remove this line
       })
       .catch((error) => {
         console.log(error.message);
-        setErrorMessage('Incorrect username or password')
+        setErrorMessage('Incorrect username or password');
       });
   };
+  
+
 
   // function takes a text input and replaces the intial state value with that text input 
 

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,7 +8,6 @@ import LaunchPage from './components/LaunchPage';
 import StartPage from './components/StartPage';
 import Registration1 from './components/Registration/Registration1';
 import Registration2 from './components/Registration/Registration2';
-import Registration3 from './components/Registration/Registration3';
 import Sports1 from './components/Sports/Sports1';
 import Sports2 from './components/Sports/Sports2';
 import Sports3 from './components/Sports/Sports3';
@@ -25,18 +25,21 @@ import Volunteering4 from './components/Volunteering/Volunteering4';
 import VolunReg1 from './components/VolunReg/VolunReg1';
 import VolunReg2 from './components/VolunReg/VolunReg2';
 import VolunReg3 from './components/VolunReg/VolunReg3';
-
+import SportsFeed from './components/Sports/SportsFeed';
+import SportsFeedUpdated from './components/Sports/SportsFeedUpdated'; 
+import { UsernameProvider } from './components/UsernameContext';
 
 const Stack = createStackNavigator();
 
 export default function App (){
   return (
+    <UsernameProvider>
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Launch Page">
         <Stack.Screen name="LaunchPage" options={{headerShown: false}} component={LaunchPage} />
         <Stack.Screen name="Registration1" options={{headerShown: false}} component={Registration1} />
         <Stack.Screen name="Registration2" options={{headerShown: false}} component={Registration2} />
-        <Stack.Screen name="Registration3" options={{headerShown: false}} component={Registration3} />
         <Stack.Screen name="StartPage" options={{headerShown: false}} component={StartPage} />
         <Stack.Screen name="Sports1" options={{headerShown: false}} component={Sports1} />
         <Stack.Screen name="Sports2" options={{headerShown: false}} component={Sports2} />
@@ -55,6 +58,10 @@ export default function App (){
         <Stack.Screen name="VolunReg1" options={{headerShown: false}} component={VolunReg1} />
         <Stack.Screen name="VolunReg2" options={{headerShown: false}} component={VolunReg2} />
         <Stack.Screen name="VolunReg3" options={{headerShown: false}} component={VolunReg3} />
+        <Stack.Screen name="SportsFeed" options={{headerShown: false}} component={SportsFeed} />
+        <Stack.Screen name="SportsFeedUpdated" options={{headerShown: false}} component={SportsFeedUpdated} />
+
+
 
 
 
@@ -68,6 +75,8 @@ export default function App (){
 
       </Stack.Navigator>
     </NavigationContainer>
+    </UsernameProvider>
+
   );
 };
 

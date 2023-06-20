@@ -4,8 +4,38 @@ import {Picker} from '@react-native-picker/picker'
 import { Ionicons } from '@expo/vector-icons'; 
 import { useState } from 'react';
 import { Touchable } from 'react-native';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../firebase';
+import { retrieveUserInfo } from './RetrieveNeighbourhood';
+import { useUsernameState } from './usernameState';
+import { UsernameContext } from './UsernameContext';
+import { useContext } from 'react';
+import { createContext } from 'react';
 
-const StartPage = ({ navigation }) => {
+
+const StartPage = ({ route, navigation }) => {
+
+
+
+
+  const { username } = useContext(UsernameContext);
+
+
+  const handleNextPageSports = async () => {
+    try {
+      console.log("--------------");
+      console.log("Username is: ", username); // Username is supposed to be from UsernameContext
+      const emailToRetrieve = username;
+      const userInfo = await retrieveUserInfo(emailToRetrieve);
+      const userChoice = userInfo[0]?.neighbourhood || null; // Access the userChoice value
+      console.log("Access outside function: ", userChoice);
+      navigation.navigate('SportsFeed', { username, userChoice });
+    } catch (error) {
+      console.error("Error retrieving user information: ", error);
+    }
+  };
+  
+
     return (
       <View style={styles.container}>
         <Text style={styles.logo}>Open Jio</Text>
@@ -17,9 +47,9 @@ const StartPage = ({ navigation }) => {
 
           {/* Launch Sports 1 */}
 
-          <TouchableOpacity  onPress={() => navigation.navigate('Sports1')}> 
+          <TouchableOpacity  onPress={() => handleNextPageSports()}> 
             <Text style={styles.activity}>
-              Sports & Games
+              Sports & Games 
             </Text>
           </TouchableOpacity>
 

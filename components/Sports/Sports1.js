@@ -12,7 +12,7 @@ const Sports1 = ({ navigation }) => {
   };
 
   const [selectedSport, setSelectedSport] = useState('Badminton')
-  const [selectedProficiency, setSelectedProficiency] = useState('1')
+  const [selectedProficiency, setSelectedProficiency] = useState('Beginner')
 
   function handleSport(value){
     setSelectedSport(value)
@@ -23,7 +23,7 @@ const Sports1 = ({ navigation }) => {
   };
 
   function handleNext(){
-    navigation.navigate('Sports2', {selectedSport});
+    navigation.navigate('Sports2', {selectedSport, selectedProficiency});
   };
 
   return (
@@ -68,9 +68,9 @@ const Sports1 = ({ navigation }) => {
           <Picker
             selectedValue={selectedProficiency}
             onValueChange={handleProficiency}>
-            <Picker.Item label="Beginner" value="1" />
-            <Picker.Item label="Intermediate" value="2" />
-            <Picker.Item label="Advanced" value="3" />
+            <Picker.Item label="Beginner" value="Beginner" />
+            <Picker.Item label="Intermediate" value="Intermediate" />
+            <Picker.Item label="Advanced" value="Advanced" />
           </Picker>
 
         </View>
