@@ -16,10 +16,7 @@ import { createContext } from 'react';
 const StartPage = ({ route, navigation }) => {
 
 
-
-
-  const { username } = useContext(UsernameContext);
-
+  const { username, setUsername, setUserChoice } = useContext(UsernameContext);
 
   const handleNextPageSports = async () => {
     try {
@@ -29,11 +26,19 @@ const StartPage = ({ route, navigation }) => {
       const userInfo = await retrieveUserInfo(emailToRetrieve);
       const userChoice = userInfo[0]?.neighbourhood || null; // Access the userChoice value
       console.log("Access outside function: ", userChoice);
-      navigation.navigate('SportsFeed', { username, userChoice });
+
+      // Set the userChoice value in the context
+      setUserChoice(userChoice);
+
+      navigation.navigate('SportsFeed', { username });
     } catch (error) {
       console.error("Error retrieving user information: ", error);
     }
   };
+
+  
+
+
   
 
     return (
