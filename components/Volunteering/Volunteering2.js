@@ -90,15 +90,15 @@ const styles = StyleSheet.create({
   projectsContainer:{ //Container surrounding all project boxes
     marginTop: 50,
     flex: 1,
-    // backgroundColor: 'white',
     height: 1500,
     width: 350,
     borderRadius: 10,
+    
 
   },
 
   project:{
-    backgroundColor: 'white',
+    backgroundColor: '#ffe6b8',
     padding: 16,
     marginBottom: 30,
   },

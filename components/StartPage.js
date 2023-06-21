@@ -54,11 +54,6 @@ const StartPage = ({ route, navigation }) => {
     }
   };
 
-  
-
-
-  
-
     return (
       <View style={styles.container}>
         <Text style={styles.logo}>Open Jio</Text>
@@ -70,25 +65,34 @@ const StartPage = ({ route, navigation }) => {
 
           {/* Launch Sports 1 */}
 
-          <TouchableOpacity  onPress={() => handleNextPageSports()}> 
-            <Text style={styles.activity}>
-              Sports & Games 
+          <TouchableOpacity  style={styles.activity1} onPress={() => handleNextPageSports()}> 
+            <Text style={{textAlign: 'center',
+      fontSize: 20,
+      fontFamily: 'Helvetica',
+      fontWeight: 200,}}>
+              Sports & Games ⚽
             </Text>
           </TouchableOpacity>
 
           {/* Launch Food 1 */}
 
-          <TouchableOpacity onPress={() => handleNextPageFood()}> 
-            <Text style={styles.activity}>
-              Food Buddies 
+          <TouchableOpacity style={styles.activity2} onPress={() => handleNextPageFood()}> 
+            <Text style={{textAlign: 'center',
+      fontSize: 20,
+      fontFamily: 'Helvetica',
+      fontWeight: 200,}} >
+              Food Buddies 🤤
             </Text>
           </TouchableOpacity>
 
           {/* Launch Volunteering 1 */}
 
-          <TouchableOpacity onPress={() => navigation.navigate('Volunteering1')}> 
-            <Text style={styles.activity}>
-              Volunteering 
+          <TouchableOpacity style={styles.activity3} onPress={() => navigation.navigate('Volunteering1')}> 
+            <Text style={{textAlign: 'center',
+      fontSize: 20,
+      fontFamily: 'Helvetica',
+      fontWeight: 200,}} >
+              Volunteering 🫶
             </Text>
           </TouchableOpacity>
 
@@ -140,10 +144,11 @@ const StartPage = ({ route, navigation }) => {
       marginBottom: 30,
       alignItems: 'center',
       justifyContent: 'center',
+      
     },
 
-    activity:{
-      backgroundColor: 'white',
+    activity1:{
+      // backgroundColor: 'white',
       paddingHorizontal: 10,
       paddingVertical: 25,
       borderRadius: 10,
@@ -153,6 +158,35 @@ const StartPage = ({ route, navigation }) => {
       fontSize: 20,
       fontFamily: 'Helvetica',
       fontWeight: 200,
+      backgroundColor: "#c3eafa"
+    },
+
+    activity2:{
+      // backgroundColor: 'white',
+      paddingHorizontal: 10,
+      paddingVertical: 25,
+      borderRadius: 10,
+      width: 310,
+      marginBottom: 60,
+      textAlign: 'center',
+      fontSize: 20,
+      fontFamily: 'Helvetica',
+      fontWeight: 200,
+      backgroundColor: "#d6f5c1"
+    },
+
+    activity3:{
+      // backgroundColor: 'white',
+      paddingHorizontal: 10,
+      paddingVertical: 25,
+      borderRadius: 10,
+      width: 310,
+      marginBottom: 60,
+      textAlign: 'center',
+      fontSize: 20,
+      fontFamily: 'Helvetica',
+      fontWeight: 200,
+      backgroundColor: "#ffe6b8"
     },
 
     

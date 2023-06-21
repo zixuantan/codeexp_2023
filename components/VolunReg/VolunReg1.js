@@ -141,7 +141,7 @@ const VolunReg1 = ({ navigation }) => {
           <Text style={{marginBottom:19, fontFamily: 'Helvetica', fontSize: 16, fontWeight: 200}}>Pick the level of commitment required</Text>
 
           <Picker
-            style={{marginTop: -15, marginBottom: 30}}
+            style={{marginTop: -15, marginBottom: -30}}
             selectedValue={selectedCommitmentLevel_projreg}
             onValueChange={handleSelectedCommitmentLevel_projreg}>
             <Picker.Item label="< 6 days" value="1" />
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   },
 
   inputContainer:{ // Container surrounding all input boxes
-    marginTop: 100,
+    marginTop: 70,
     marginBottom: 30  
   },
 

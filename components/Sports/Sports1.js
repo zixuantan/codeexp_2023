@@ -11,7 +11,7 @@ const Sports1 = ({ navigation }) => {
     navigation.goBack();
   };
 
-  const [selectedSport, setSelectedSport] = useState('Badminton')
+  const [selectedSport, setSelectedSport] = useState('Badminton 🏸')
   const [selectedProficiency, setSelectedProficiency] = useState('Beginner')
 
   function handleSport(value){
@@ -58,9 +58,9 @@ const Sports1 = ({ navigation }) => {
            <Picker
             selectedValue={selectedSport}
             onValueChange={handleSport}>
-            <Picker.Item label="Badminton" value="Badminton" />
-            <Picker.Item label="Tchoukball" value="Tchoukball" />
-            <Picker.Item label="Basketball" value="Basketball" />
+            <Picker.Item label="Badminton" value="Badminton 🏸" />
+            <Picker.Item label="Tchoukball" value="Tchoukball 🤾🏻" />
+            <Picker.Item label="Basketball" value="Basketball 🏀" />
           </Picker>
 
           <Text style={{marginBottom:-20, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Select your level of proficiency </Text>
@@ -76,7 +76,7 @@ const Sports1 = ({ navigation }) => {
         </View>
 
         <TouchableOpacity style={{
-        backgroundColor: '#dea3e6',
+        backgroundColor: '#c3eafa',
         paddingVertical: 20,
         paddingHorizontal: 20,
         width: 310,
@@ -101,8 +101,9 @@ const styles = StyleSheet.create({
   },
 
   inputContainer:{ // Container surrounding all 3 input boxes
-    marginTop: 100,
-    marginBottom: 30  
+    marginTop: 70,
+    marginBottom: 90,
+      
   },
  
   

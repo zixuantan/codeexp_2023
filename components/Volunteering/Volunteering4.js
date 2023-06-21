@@ -29,7 +29,7 @@ const Volunteering4 = ({ navigation }) => {
           fontFamily: 'Trebuchet MS',
           fontSize: 32,
           fontWeight: 'normal',
-          marginLeft: 50,
+          marginLeft: 55,
           }}>
             Join Group</Text>
         </View>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   image: {
     width: 250,
     height: 250,
-    marginTop: 150,
+    marginTop: 120,
     marginBottom:6,
   },
   url:{

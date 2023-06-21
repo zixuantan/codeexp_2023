@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
  
   details:{
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     paddingHorizontal: 10,
     paddingVertical: 25,
     borderRadius: 10,
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Helvetica',
     fontWeight: 200,
+    backgroundColor: "#c3eafa"
   },
 
 });

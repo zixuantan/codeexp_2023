@@ -93,14 +93,13 @@ const Volunteering1 = ({ navigation }) => {
             <Picker.Item label="> 1 month" value="3" />
           </Picker>
 
-          <Text style={{marginTop: 20, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Have a community-based volunteering </Text>
+          <Text style={{marginTop: -10, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Have a community-based volunteering </Text>
           <Text style={{marginTop: 1, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>project and looking for volunteers for </Text>
           <Text style={{marginTop: 1, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>upcoming events? Reach out to us</Text>
-          {/* <Text style={{marginTop: 1, marginBottom:90, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}> us </Text> */}
 
           <TouchableOpacity style={{
             backgroundColor: '#e6e1e1',
-            marginBottom: 30,
+            marginBottom: 70,
             paddingVertical: 5,
             width: 50,
             height: 30,
@@ -116,7 +115,7 @@ const Volunteering1 = ({ navigation }) => {
           {/* Go to Volunteering 2 */}
 
           <TouchableOpacity style={{
-            backgroundColor: '#dea3e6',
+            backgroundColor: '#ffe6b8',
             paddingVertical: 20,
             paddingHorizontal: 20,
             width: 310,
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   inputContainer:{ // Container surrounding all 3 input boxes
-    marginTop: 100,
+    marginTop: 60,
     marginBottom: 30  
   },
 

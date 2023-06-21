@@ -74,7 +74,7 @@ const FoodFeed = ({ route, navigation }) => {
         <View style={styles.projectExpanded}>
 
           <Text style={styles.mealName}>
-            Breakfast @ {userChoice}
+            Breakfast 🍳 @ {userChoice}
           </Text>
 
           <Text style={styles.date}>
@@ -151,13 +151,14 @@ const styles = StyleSheet.create({
   },
 
   projectExpanded:{
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     marginTop: 40,
     paddingVertical: 25,
     paddingHorizontal:20,
     borderRadius: 10,
     width: 350,
     marginBottom: 30,
+    backgroundColor: "#d6f5c1"
   },
 
   mealName:{

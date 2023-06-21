@@ -72,7 +72,7 @@ const Sports3 = ({ route, navigation }) => {
 
 
         <TouchableOpacity style={{
-        backgroundColor: '#dea3e6',
+        backgroundColor: '#c3eafa',
         paddingVertical: 20,
         paddingHorizontal: 20,
         width: 310,

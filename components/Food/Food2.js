@@ -39,7 +39,7 @@ const Food2 = ({ route, navigation }) => {
           fontFamily: 'Trebuchet MS',
           fontSize: 32,
           fontWeight: 'normal',
-          marginLeft: 80,
+          marginLeft: 58,
           }}>
             {selectedMeal}</Text>
       </View>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
 
   date:{
-    backgroundColor: 'white',
+    backgroundColor: '#d6f5c1',
     paddingHorizontal: 10,
     paddingVertical: 25,
     borderRadius: 10,

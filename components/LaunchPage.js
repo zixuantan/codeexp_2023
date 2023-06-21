@@ -61,7 +61,10 @@ const LaunchPage = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>Open Jio</Text>
+      <Text style={styles.logo}>Open Jio </Text>
+      <Text style={styles.description}>Find a kaki today!</Text>
+      <Text style={styles.emoji}>🤝</Text>
+
 
       <View style={styles.inputContainer}>
 
@@ -85,7 +88,7 @@ const LaunchPage = ({ route, navigation }) => {
       {/* Login Button */}
 
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-      <Text> Login </Text> 
+      <Text style={{fontWeight: 400,}}> Login </Text> 
       </TouchableOpacity>
 
     
@@ -112,11 +115,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Trebuchet MS',
     fontSize: 64,
     position: 'absolute',
-    top: '25%', // Adjust this value to position the text as desired
+    top: '20%', // Adjust this value to position the text as desired
     fontWeight: 'bold',
   },
+
+  emoji: {
+    fontFamily: 'Trebuchet MS',
+    fontSize: 64,
+    fontWeight: 'bold',
+    marginTop:10,
+  },
+
   inputContainer:{ // Container surrounding both input boxes
-    marginTop: 150,
+    marginTop: 2,
     marginBottom: 30  
   },
   textInput:{ // Imagine each input box being a container
@@ -129,7 +140,7 @@ const styles = StyleSheet.create({
   },
   loginButton:{
     backgroundColor: '#dea3e6',
-    paddingVertical: 10,
+    paddingVertical: 15,
     paddingHorizontal: 20,
     width: 250,
     borderRadius: 5,
@@ -151,6 +162,13 @@ const styles = StyleSheet.create({
     color: 'red',
     marginBottom: 10,
     marginTop: 20
+  },
+
+  description:{
+    fontFamily: 'Helvetica',
+    marginTop:60,
+    fontSize: 18,
+    fontWeight: 200,
   },
  
 });

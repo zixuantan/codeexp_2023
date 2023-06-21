@@ -42,7 +42,7 @@ const Sports2 = ({ route, navigation }) => {
           fontFamily: 'Trebuchet MS',
           fontSize: 32,
           fontWeight: 'normal',
-          marginLeft: 60,
+          marginLeft: 40,
           }}>
             {selectedSport}</Text>
       </View>
@@ -132,10 +132,11 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 
   date:{
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     paddingHorizontal: 10,
     paddingVertical: 25,
     borderRadius: 10,
@@ -145,6 +146,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Helvetica',
     fontWeight: 200,
+    backgroundColor: "#c3eafa"
+
   },
   
   

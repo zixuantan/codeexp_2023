@@ -47,33 +47,33 @@ const Food1 = ({ navigation }) => {
 
         <View style={styles.mealContainer}>
 
-          <TouchableOpacity  onPress={() => handleMeal('Breakfast')}> 
+          <TouchableOpacity  onPress={() => handleMeal('Breakfast 🍳')}> 
               <Text style={styles.meal}>
-              Breakfast
+              Breakfast 🍳
               </Text>
             </TouchableOpacity>
 
-          <TouchableOpacity  onPress={() => handleMeal('Brunch')}> 
+          <TouchableOpacity  onPress={() => handleMeal('Brunch 🥂')}> 
             <Text style={styles.meal}>
-            Brunch
+            Brunch 🥂
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity  onPress={() => handleMeal('Lunch')}> 
+          <TouchableOpacity  onPress={() => handleMeal('Lunch 🥪')}> 
               <Text style={styles.meal}>
-              Lunch
+              Lunch 🥪
               </Text>
             </TouchableOpacity>
 
-          <TouchableOpacity  onPress={() => handleMeal('Dinner')}> 
+          <TouchableOpacity  onPress={() => handleMeal('Dinner 🍝')}> 
             <Text style={styles.meal}>
-            Dinner
+            Dinner 🍝
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity  onPress={() => handleMeal('Supper')}> 
+          <TouchableOpacity  onPress={() => handleMeal('Supper 🍟')}> 
             <Text style={styles.meal}>
-            Supper
+            Supper 🍟
             </Text>
           </TouchableOpacity>
 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
 
   meal:{
-    backgroundColor: 'white',
+    backgroundColor: '#d6f5c1',
     paddingHorizontal: 10,
     paddingVertical: 25,
     borderRadius: 10,

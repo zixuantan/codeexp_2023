@@ -51,9 +51,9 @@ const FoodFeedUpdated = ({ route, navigation }) => {
             fontFamily: 'Trebuchet MS',
             fontSize: 32,
             fontWeight: 'normal',
-            marginLeft: 45,
+            marginLeft: 60,
             }}>
-              Sports Feed </Text>
+              Food Feed </Text>
           </View>
     
           <View style={styles.container}>
@@ -68,7 +68,7 @@ const FoodFeedUpdated = ({ route, navigation }) => {
             <View style={styles.projectExpanded}>
     
             <Text style={styles.mealName}>
-            Breakfast @ {userChoice}
+            {selectedMeal} @ {userChoice}
           </Text>
 
           <Text style={styles.date}>
@@ -98,7 +98,7 @@ const FoodFeedUpdated = ({ route, navigation }) => {
             <View style={styles.projectExpanded}>
 
             <Text style={styles.mealName}>
-            Breakfast @ Bukit Batok
+            Breakfast 🍳 @ Bukit Batok
           </Text>
 
           <Text style={styles.date}>
@@ -172,7 +172,7 @@ const FoodFeedUpdated = ({ route, navigation }) => {
     },
   
     projectExpanded:{
-      backgroundColor: 'white',
+      backgroundColor: '#d6f5c1',
       marginTop: 40,
       paddingVertical: 25,
       paddingHorizontal:20,

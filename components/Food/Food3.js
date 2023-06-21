@@ -73,7 +73,7 @@ const Food3 = ({ route, navigation }) => {
 
           {/* Pick dining setting */}
 
-          <Text style={{marginBottom:-20, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Select your desired dining setting </Text>
+          <Text style={{marginTop: 60, marginBottom:-20, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Select your desired dining setting </Text>
 
           <Picker
             selectedValue={selectedLocation}
@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
   },
 
   inputContainer:{ // Container surrounding all 3 input boxes
-    marginTop: 100,
-    marginBottom: 30  
+    marginTop: 70,
+    marginBottom: 70  
   },
 
   

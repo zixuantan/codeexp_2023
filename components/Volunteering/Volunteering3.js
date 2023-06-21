@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
 
   projectExpanded:{
-    backgroundColor: 'white',
+    backgroundColor: '#ffe6b8',
     marginTop: 40,
     paddingVertical: 25,
     paddingHorizontal:20,
