@@ -6,11 +6,18 @@ import { useState } from 'react';
 import { Touchable } from 'react-native';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { useContext } from 'react';
+import { UsernameContext } from '../UsernameContext';
+import { retrieveUserInfo } from '../RetrieveNeighbourhood';
+import { createContext } from 'react';
 
 
 const SportsFeedUpdated = ({ route, navigation }) => {
 
     const {selectedTiming, selectedDay, selectedSport, selectedProficiency} = route.params;
+
+    const { userChoice } = useContext(UsernameContext);
+
   
     function handleGoBack(){
         navigation.goBack();
@@ -51,7 +58,7 @@ const SportsFeedUpdated = ({ route, navigation }) => {
     
           <View style={styles.container}>
     
-            <Text style={styles.description}>Your Current Location:</Text>
+            <Text style={styles.description}>Your Current Location: {userChoice}</Text>
             </View>
     
             <View>
@@ -61,19 +68,19 @@ const SportsFeedUpdated = ({ route, navigation }) => {
             <View style={styles.projectExpanded}>
     
               <Text style={styles.sportName}>
-                Badminton
+                {selectedSport}
               </Text>
     
               <Text style={styles.proficiency}>
-                Proficiency: Beginner
+                Proficiency: {selectedProficiency}
               </Text>
     
               <Text style={styles.date}>
-                Date: 12/6 Mon
+                Date: {selectedDay}
               </Text>
     
               <Text style={styles.time}>
-                Time: 9AM
+                Time: {selectedTiming}
               </Text>
     
               <Text style={styles.participantNumber}>
@@ -86,6 +93,34 @@ const SportsFeedUpdated = ({ route, navigation }) => {
 
     
             </View>
+            
+            <View style={styles.projectExpanded}>
+
+          <Text style={styles.sportName}>
+            Badminton
+          </Text>
+
+          <Text style={styles.proficiency}>
+            Proficiency: Beginner
+          </Text>
+
+          <Text style={styles.date}>
+            Date: 12/6 Mon
+          </Text>
+
+          <Text style={styles.time}>
+            Time: 9AM
+          </Text>
+
+          <Text style={styles.participantNumber}>
+            Current no. of participants: 2/4
+          </Text>
+
+          <Text style={styles.clicktoview}>
+            View Details
+          </Text>
+
+        </View>
               
               
             </View>
@@ -93,15 +128,16 @@ const SportsFeedUpdated = ({ route, navigation }) => {
             <View style={styles.container}>
     
                 
-            {/* Go to next Sports 1 */}
+            {/* Go to Sports 1 */}
     
             <TouchableOpacity style={{
             backgroundColor: '#dea3e6',
-            marginTop: 260,
+            marginTop: 50,
             paddingVertical: 20,
             paddingHorizontal: 20,
             width: 310,
             borderRadius: 5,
+            marginBottom: 30,
             alignItems: 'center'}} onPress={handleNextPage} >
             <Text> Finish </Text> 
           </TouchableOpacity>

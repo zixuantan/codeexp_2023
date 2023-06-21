@@ -28,11 +28,6 @@ const SportsFeed = ({ route, navigation }) => {
   const { userChoice } = useContext(UsernameContext);
 
 
-
-
-  
-
-
   function handleNextPage(){
     // retrieveUserInfo(emailToRetrieve);
     navigation.navigate('Sports1');
