@@ -94,7 +94,7 @@ const SportsFeedUpdated = ({ route, navigation }) => {
     
             </View>
             
-            <View style={styles.projectExpanded}>
+            <View style={styles.projectExpanded2}>
 
           <Text style={styles.sportName}>
             Badminton 🏸
@@ -173,6 +173,17 @@ const SportsFeedUpdated = ({ route, navigation }) => {
     projectExpanded:{
       // backgroundColor: 'white',
       marginTop: 40,
+      paddingVertical: 25,
+      paddingHorizontal:20,
+      borderRadius: 10,
+      width: 350,
+      marginBottom: 5,
+      backgroundColor: "#c3eafa"
+    },
+
+    projectExpanded2:{
+      // backgroundColor: 'white',
+      marginTop: 30,
       paddingVertical: 25,
       paddingHorizontal:20,
       borderRadius: 10,

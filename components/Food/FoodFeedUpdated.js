@@ -178,6 +178,16 @@ const FoodFeedUpdated = ({ route, navigation }) => {
       paddingHorizontal:20,
       borderRadius: 10,
       width: 350,
+      marginBottom: 5,
+    },
+
+     projectExpanded2:{
+      backgroundColor: '#d6f5c1',
+      marginTop: 30,
+      paddingVertical: 25,
+      paddingHorizontal:20,
+      borderRadius: 10,
+      width: 350,
       marginBottom: 30,
     },
   

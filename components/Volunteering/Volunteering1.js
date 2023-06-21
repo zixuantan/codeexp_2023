@@ -88,12 +88,13 @@ const Volunteering1 = ({ navigation }) => {
             style={{marginTop: -15,}}
             selectedValue={selectedCommitment}
             onValueChange={handlecommitment}>
-            <Picker.Item label="< 6 days" value="1" />
-            <Picker.Item label="> 1 week" value="2" />
-            <Picker.Item label="> 1 month" value="3" />
+            <Picker.Item label="ADHOC" value="1" />
+            <Picker.Item label="< 6 days" value="2" />
+            <Picker.Item label="> 1 week" value="3" />
+            <Picker.Item label="> 1 month" value="4" />
           </Picker>
 
-          <Text style={{marginTop: -10, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Have a community-based volunteering </Text>
+          <Text style={{marginTop: 40, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Have a community-based volunteering </Text>
           <Text style={{marginTop: 1, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>project and looking for volunteers for </Text>
           <Text style={{marginTop: 1, marginBottom:5, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>upcoming events? Reach out to us</Text>
 

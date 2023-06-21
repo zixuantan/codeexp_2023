@@ -144,9 +144,10 @@ const VolunReg1 = ({ navigation }) => {
             style={{marginTop: -15, marginBottom: -30}}
             selectedValue={selectedCommitmentLevel_projreg}
             onValueChange={handleSelectedCommitmentLevel_projreg}>
-            <Picker.Item label="< 6 days" value="1" />
-            <Picker.Item label="> 1 week" value="2" />
-            <Picker.Item label="> 1 month" value="3" />
+            <Picker.Item label="ADHOC" value="1" />
+            <Picker.Item label="< 6 days" value="2" />
+            <Picker.Item label="> 1 week" value="3" />
+            <Picker.Item label="> 1 month" value="4" />
           </Picker>
 
           <TouchableOpacity style={{
@@ -155,6 +156,8 @@ const VolunReg1 = ({ navigation }) => {
             paddingHorizontal: 20,
             width: 310,
             borderRadius: 5,
+            marginTop: 60,
+            marginBottom: 30,
             alignItems: 'center'}} onPress={() => navigation.navigate('VolunReg3')} >
             <Text> Submit </Text> 
           </TouchableOpacity>

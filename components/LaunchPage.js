@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
 
   inputContainer:{ // Container surrounding both input boxes
-    marginTop: 2,
+    marginTop: 8,
     marginBottom: 30  
   },
   textInput:{ // Imagine each input box being a container
