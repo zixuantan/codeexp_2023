@@ -14,7 +14,7 @@ import { createContext } from 'react';
 
 const FoodFeedUpdated = ({ route, navigation }) => {
 
-    const {selectedDiet, selectedLocation, selectedDay, selectedMeal} = route.params;
+    const {selectedDiet, selectedLocation, selectedDay, selectedMeal, selectedTime} = route.params;
 
     const { userChoice } = useContext(UsernameContext);
 
@@ -72,7 +72,7 @@ const FoodFeedUpdated = ({ route, navigation }) => {
           </Text>
 
           <Text style={styles.date}>
-            Date: {selectedDay}
+            Date & Time: {selectedDay}, {selectedTime}
           </Text>
 
 
@@ -102,7 +102,7 @@ const FoodFeedUpdated = ({ route, navigation }) => {
           </Text>
 
           <Text style={styles.date}>
-            Date: 13/6 Tue
+            Date & Time: 13/6 Tue, 11AM
           </Text>
 
           <Text style={styles.dietType}>
@@ -162,7 +162,7 @@ const FoodFeedUpdated = ({ route, navigation }) => {
     description:{
       fontFamily: 'Helvetica',
       marginTop:18,
-      fontSize: 18,
+      fontSize: 15,
       fontWeight: 200,
     },
   

@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Trebuchet MS',
     fontSize: 64,
     fontWeight: 'bold',
-    marginTop:10,
+    marginTop:5,
   },
 
   inputContainer:{ // Container surrounding both input boxes

@@ -78,7 +78,7 @@ const FoodFeed = ({ route, navigation }) => {
           </Text>
 
           <Text style={styles.date}>
-            Date: 13/6 Tue
+            Date & Time: 13/6 Tue, 11AM
           </Text>
 
           <Text style={styles.dietType}>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   description:{
     fontFamily: 'Helvetica',
     marginTop:18,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 200,
   },
 

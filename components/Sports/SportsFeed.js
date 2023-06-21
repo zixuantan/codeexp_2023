@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   description:{
     fontFamily: 'Helvetica',
     marginTop:18,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 200,
   },
 

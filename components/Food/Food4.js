@@ -8,10 +8,10 @@ import { Touchable } from 'react-native';
 
 const Food4 = ({ route, navigation }) => {
 
-  const {selectedDiet, selectedLocation, selectedDay, selectedMeal} = route.params;
+  const {selectedDiet, selectedLocation, selectedDay, selectedMeal, selectedTime} = route.params;
 
   function handleNext(){
-    navigation.navigate('FoodFeedUpdated', {selectedDiet, selectedLocation, selectedDay, selectedMeal});
+    navigation.navigate('FoodFeedUpdated', {selectedDiet, selectedLocation, selectedDay, selectedMeal, selectedTime});
   };
 
   function handleGoBack(){
@@ -45,7 +45,7 @@ const Food4 = ({ route, navigation }) => {
 
         <View style={styles.detailsContainer}>
           <Text style={styles.details}>Meal: {selectedMeal}</Text>
-          <Text style={styles.details}> Date: {selectedDay}  </Text>
+          <Text style={styles.details}> Date & Time: {selectedDay}, {selectedTime}  </Text>
           <Text style={styles.details}> Dietary Type: {selectedDiet} </Text>
           <Text style={styles.details}> Dining Setting: {selectedLocation} </Text>
           <Text style={styles.details}> Current no. of participants: 2/4</Text>

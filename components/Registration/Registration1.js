@@ -19,7 +19,7 @@ const Registration1 = ({ navigation }) => {
   const [name_reg, setName_reg] = useState('');
   const [email_reg, setEmail_reg] = useState('');
   const [password_reg, setPassword_reg] = useState('');
-  const [selectedNeighbourhood, setSelectedNeighbourhood] = useState('Admiralty');
+  const [selectedNeighbourhood, setSelectedNeighbourhood] = useState('Admiralty Zone 1');
 
 
   // Store registered name in name_reg
@@ -141,10 +141,16 @@ const Registration1 = ({ navigation }) => {
             style={{marginTop: -15,}}
             selectedValue={selectedNeighbourhood}
             onValueChange={handleNeighbourhood}>
-            <Picker.Item label="Admiralty" value="Admiralty" />
-            <Picker.Item label="Aljunied" value="Aljunied" />
-            <Picker.Item label="Ang Mo Kio" value="Ang Mo Kio" />
-            <Picker.Item label="Bukit Batok" value="Bukit Batok" />
+            <Picker.Item label="Admiralty Zone 1" value="Admiralty Zone 1" />
+            <Picker.Item label="Admiralty Zone 2" value="Admiralty Zone 2" />
+            <Picker.Item label="Aljunied Zone 1" value="Aljunied Zone 1" />
+            <Picker.Item label="Aljunied Zone 2" value="Aljunied Zone 2" />
+            <Picker.Item label="Ang Mo Kio Zone 1" value="Ang Mo Kio Zone 1" />
+            <Picker.Item label="Ang Mo Kio Zone 2" value="Ang Mo Kio Zone 2" />
+            <Picker.Item label="Bukit Batok Zone 1" value="Bukit Batok Zone 1" />
+            <Picker.Item label="Bukit Batok Zone 2" value="Bukit Batok Zone 2" />
+            <Picker.Item label="Sembawang Zone 1" value="Sembawang Zone 1" />
+
           </Picker>
           
         </View>

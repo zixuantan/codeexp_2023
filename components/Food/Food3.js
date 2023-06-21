@@ -11,6 +11,7 @@ const Food3 = ({ route, navigation }) => {
 
   const [selectedDiet, setSelectedDiet] = useState('Non-muslim');
   const [selectedLocation, setSelectedLocation] = useState('Hawker');
+  const [selectedTime, setSelectedTime] = useState("7AM")
 
   function handleDiet(value){
     setSelectedDiet(value);
@@ -20,8 +21,12 @@ const Food3 = ({ route, navigation }) => {
     setSelectedLocation(value);
   };
 
+  function handleTime(value){
+    setSelectedTime(value);
+  };
+
   function handleNext(){
-    navigation.navigate('Food4', {selectedDiet, selectedLocation, selectedDay, selectedMeal});
+    navigation.navigate('Food4', {selectedDiet, selectedLocation, selectedDay, selectedMeal, selectedTime});
   };
 
 
@@ -31,7 +36,7 @@ const Food3 = ({ route, navigation }) => {
 
 
   return (
-    <View>
+    <ScrollView>
 
       <View style={{flexDirection: 'row',marginTop: 70, textAlign: 'center'
 }}> 
@@ -59,9 +64,41 @@ const Food3 = ({ route, navigation }) => {
 
         <View style={styles.inputContainer}>
 
+          {/* Pick timing */}
+
+          <Text style={{marginBottom: -20, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Select a timing </Text>
+
+           <Picker
+            selectedValue={selectedTime}
+            onValueChange={handleTime}>
+            <Picker.Item label="7AM" value="7AM" />
+            <Picker.Item label="8AM" value="8AM" />
+            <Picker.Item label="9AM" value="9AM" />
+            <Picker.Item label="10AM" value="10AM" />
+            <Picker.Item label="11AM" value="11AM" />
+            <Picker.Item label="12PM" value="12PM" />
+            <Picker.Item label="1PM" value="1PM" />
+            <Picker.Item label="2PM" value="2PM" />
+            <Picker.Item label="3PM" value="3PM" />
+            <Picker.Item label="4PM" value="4PM" />
+            <Picker.Item label="5PM" value="5PM" />
+            <Picker.Item label="6PM" value="6PM" />
+            <Picker.Item label="7PM" value="7PM" />
+            <Picker.Item label="8PM" value="8PM" />
+            <Picker.Item label="9PM" value="9PM" />
+            <Picker.Item label="10PM" value="10PM" />
+            <Picker.Item label="11PM" value="11PM" />
+            <Picker.Item label="12AM" value="12AM" />
+            <Picker.Item label="1AM" value="1AM" />
+            <Picker.Item label="2AM" value="2AM" />
+            <Picker.Item label="3AM" value="3AM" />
+
+          </Picker>
+
+
           {/* Pick dietary type */}
 
-          <Text style={{marginBottom: -20, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Select your dietary type </Text>
+          <Text style={{marginTop: 60, marginBottom: -20, fontFamily: 'Helvetica', fontSize: 18, fontWeight: 200}}>Select your dietary type </Text>
 
            <Picker
             selectedValue={selectedDiet}
@@ -90,6 +127,7 @@ const Food3 = ({ route, navigation }) => {
         paddingVertical: 20,
         paddingHorizontal: 20,
         width: 310,
+        marginBottom: 60,
         borderRadius: 5,
         alignItems: 'center'}} onPress={handleNext} >
         <Text> Next </Text> 
@@ -97,7 +135,7 @@ const Food3 = ({ route, navigation }) => {
 
       </View>
      
-    </View>
+    </ScrollView>
   );
 };
 
