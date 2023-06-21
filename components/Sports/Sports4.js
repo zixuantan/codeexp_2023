@@ -66,7 +66,7 @@ const Sports4 = ({ route, navigation }) => {
         width: 310,
         borderRadius: 5,
         alignItems: 'center'}} onPress={handleNextPage} >
-        <Text> Join </Text> 
+        <Text> Confirm </Text> 
       </TouchableOpacity>
 
       </View>

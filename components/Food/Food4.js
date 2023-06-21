@@ -63,7 +63,7 @@ const Food4 = ({ route, navigation }) => {
         marginTop: -20,
         marginBottom: 60,
         alignItems: 'center'}} onPress={handleNext} >
-        <Text> Join </Text> 
+        <Text> Confirm </Text> 
       </TouchableOpacity>
 
       </View>
