@@ -18,7 +18,7 @@ const Food2 = ({ route, navigation }) => {
   };
 
   function handleDayClick(day){
-    navigation.navigate('Food3', {selectedDay:day});
+    navigation.navigate('Food3', {selectedDay:day, selectedMeal});
 
   };
   return (

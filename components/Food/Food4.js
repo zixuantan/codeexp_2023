@@ -8,7 +8,11 @@ import { Touchable } from 'react-native';
 
 const Food4 = ({ route, navigation }) => {
 
-  const {selectedLocation, selectedDiet, selectedDay} = route.params;
+  const {selectedDiet, selectedLocation, selectedDay, selectedMeal} = route.params;
+
+  function handleNext(){
+    navigation.navigate('FoodFeedUpdated', {selectedDiet, selectedLocation, selectedDay, selectedMeal});
+  };
 
   function handleGoBack(){
     navigation.goBack();
@@ -16,7 +20,7 @@ const Food4 = ({ route, navigation }) => {
 
 
   return (
-    <View>
+    <ScrollView>
 
       <View style={{flexDirection: 'row',marginTop: 70, textAlign: 'center'}}> 
         <TouchableOpacity onPress={handleGoBack}>
@@ -40,10 +44,12 @@ const Food4 = ({ route, navigation }) => {
       <View style={styles.container}>
 
         <View style={styles.detailsContainer}>
+          <Text style={styles.details}>Meal: {selectedMeal}</Text>
           <Text style={styles.details}> Date: {selectedDay}  </Text>
           <Text style={styles.details}> Dietary Type: {selectedDiet} </Text>
           <Text style={styles.details}> Dining Setting: {selectedLocation} </Text>
           <Text style={styles.details}> Current no. of participants: 2/4</Text>
+
         </View>
 
         {/* Go to Food 5 */}
@@ -54,13 +60,15 @@ const Food4 = ({ route, navigation }) => {
         paddingHorizontal: 20,
         width: 310,
         borderRadius: 5,
-        alignItems: 'center'}} onPress={() => navigation.navigate('Food5')} >
+        marginTop: -20,
+        marginBottom: 60,
+        alignItems: 'center'}} onPress={handleNext} >
         <Text> Join </Text> 
       </TouchableOpacity>
 
       </View>
 
-    </View>
+    </ScrollView>
   );
 };
 
@@ -83,7 +91,7 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     borderRadius: 10,
     width: 310,
-    marginBottom: 60,
+    marginBottom: 40,
     textAlign: 'left',
     fontSize: 20,
     fontFamily: 'Helvetica',

@@ -7,7 +7,7 @@ import { Touchable } from 'react-native';
 
 const Food3 = ({ route, navigation }) => {
 
-  const {selectedDay} = route.params;
+  const {selectedDay, selectedMeal} = route.params;
 
   const [selectedDiet, setSelectedDiet] = useState('Non-muslim');
   const [selectedLocation, setSelectedLocation] = useState('Hawker');
@@ -21,7 +21,7 @@ const Food3 = ({ route, navigation }) => {
   };
 
   function handleNext(){
-    navigation.navigate('Food4', {selectedDiet, selectedLocation, selectedDay});
+    navigation.navigate('Food4', {selectedDiet, selectedLocation, selectedDay, selectedMeal});
   };
 
 

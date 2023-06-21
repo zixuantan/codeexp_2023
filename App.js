@@ -28,6 +28,8 @@ import VolunReg3 from './components/VolunReg/VolunReg3';
 import SportsFeed from './components/Sports/SportsFeed';
 import SportsFeedUpdated from './components/Sports/SportsFeedUpdated'; 
 import { UsernameProvider } from './components/UsernameContext';
+import FoodFeed from './components/Food/FoodFeed';
+import FoodFeedUpdated from './components/Food/FoodFeedUpdated';
 
 const Stack = createStackNavigator();
 
@@ -60,6 +62,10 @@ export default function App (){
         <Stack.Screen name="VolunReg3" options={{headerShown: false}} component={VolunReg3} />
         <Stack.Screen name="SportsFeed" options={{headerShown: false}} component={SportsFeed} />
         <Stack.Screen name="SportsFeedUpdated" options={{headerShown: false}} component={SportsFeedUpdated} />
+        <Stack.Screen name="FoodFeed" options={{headerShown: false}} component={FoodFeed} />
+        <Stack.Screen name="FoodFeedUpdated" options={{headerShown: false}} component={FoodFeedUpdated} />
+
+
 
 
 

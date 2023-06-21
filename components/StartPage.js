@@ -36,6 +36,24 @@ const StartPage = ({ route, navigation }) => {
     }
   };
 
+  const handleNextPageFood = async () => {
+    try {
+      console.log("--------------");
+      console.log("Username is: ", username); // Username is supposed to be from UsernameContext
+      const emailToRetrieve = username;
+      const userInfo = await retrieveUserInfo(emailToRetrieve);
+      const userChoice = userInfo[0]?.neighbourhood || null; // Access the userChoice value
+      console.log("Access outside function: ", userChoice);
+
+      // Set the userChoice value in the context
+      setUserChoice(userChoice);
+
+      navigation.navigate('FoodFeed', { username });
+    } catch (error) {
+      console.error("Error retrieving user information: ", error);
+    }
+  };
+
   
 
 
@@ -60,7 +78,7 @@ const StartPage = ({ route, navigation }) => {
 
           {/* Launch Food 1 */}
 
-          <TouchableOpacity onPress={() => navigation.navigate('Food1')}> 
+          <TouchableOpacity onPress={() => handleNextPageFood()}> 
             <Text style={styles.activity}>
               Food Buddies 
             </Text>
