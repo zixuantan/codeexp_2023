@@ -23,6 +23,11 @@ const SportsFeed = ({ route, navigation }) => {
 
   const username = useContext(UsernameContext);
 
+  //new
+
+  const { userChoice } = useContext(UsernameContext);
+
+
 
 
   
@@ -61,7 +66,7 @@ const SportsFeed = ({ route, navigation }) => {
 
       <View style={styles.container}>
 
-        <Text style={styles.description}>Your Current Location:  </Text>
+        <Text style={styles.description}>Your Current Location: {userChoice}   </Text>
         </View>
 
 
