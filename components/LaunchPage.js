@@ -73,7 +73,7 @@ const LaunchPage = ({ route, navigation }) => {
         value={username} 
         style={styles.textInput} 
         onChangeText={handleUsernameChange} 
-        placeholder="Phone number" >
+        placeholder="Email" >
         </TextInput>
 
         <TextInput 
